@@ -1,0 +1,17 @@
+package com.examples.QuickTutorial;
+
+import java.util.ArrayList
+import java.util.List;
+
+public class QuickTutorial {
+	
+	public static void main(String args[])
+	{
+		List<String> lista = new ArrayList<>();
+		
+		lista.add("Siema");
+		lista.add("Kurwo jebana");
+		
+	}
+
+}
