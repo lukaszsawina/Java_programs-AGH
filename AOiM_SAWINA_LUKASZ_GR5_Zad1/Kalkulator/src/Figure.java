@@ -1,4 +1,4 @@
-public abstract class Figure {
+public abstract class Figure implements Printing {
     public double calculateArea()
     {
         return 0;
