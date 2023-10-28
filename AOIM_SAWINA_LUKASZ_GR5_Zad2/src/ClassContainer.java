@@ -16,18 +16,12 @@ public class ClassContainer {
             System.out.println("Grupa o nazwie " + nazwa + " już istnieje.");
         }
     }
-
     public void removeClass(String nazwa) {
         if(kontenery.containsKey(nazwa))
-        {
             kontenery.remove(nazwa);
-        }
         else
-        {
             System.out.println("Grupa o nazwie " + nazwa + " już istnieje.");
-        }
     }
-
     public void findEmpty()
     {
         kontenery.forEach((groupName, group) -> {
@@ -35,12 +29,12 @@ public class ClassContainer {
                 System.out.println(groupName);
         });
     }
-
     public void summary()
     {
         kontenery.forEach((groupName, group) -> {
+            System.out.println(groupName + ":");
             group.summary();
+            System.out.println();
         });
     }
-
 }

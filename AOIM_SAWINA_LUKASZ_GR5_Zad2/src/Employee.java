@@ -3,34 +3,19 @@ import java.util.Comparator;
 public class Employee implements Comparable<Employee>, Comparator<Employee>{
     private String imie;
     private String nazwisko;
-    private EmployeeCondition stan_pracownika;
+    private EmployeeCondition stanPracownika;
     private int rok_urodzenia;
     private double wynagrodzenie;
 
-    public void setWynagrodzenie(double v)
-    {
-        wynagrodzenie = v;
-    }
-    public double getWynagrodzenie()
-    {
-        return wynagrodzenie;
-    }
-
-    public String getNazwisko() {return nazwisko;}
     public String getImie() {return imie;}
-    public EmployeeCondition getStan_pracownika()
-    {
-        return stan_pracownika;
-    }
-    private double getSalary() {
-        return wynagrodzenie;
-    }
-    public void setStan_pracownika(EmployeeCondition ec)
-    {
-        stan_pracownika = ec;
-    }
+    public void setImie(String newImie) {imie = newImie;}
+    public String getNazwisko() {return nazwisko;}
+    public void setNazwisko(String newNazwisko) {nazwisko = newNazwisko;}
+    public EmployeeCondition getStanPracownika() { return stanPracownika;}
+    public void setStanPracownika(EmployeeCondition ec) {stanPracownika = ec;}
+    public double getWynagrodzenie() {return wynagrodzenie;}
+    public void setWynagrodzenie(double v) {wynagrodzenie = v;}
 
-    public static Comparator<Employee> salaryComparator = Comparator.comparingDouble(Employee::getSalary);
 
     public Employee(String newImie,
                     String newNazwisko,
@@ -40,7 +25,7 @@ public class Employee implements Comparable<Employee>, Comparator<Employee>{
     {
         imie = newImie;
         nazwisko = newNazwisko;
-        stan_pracownika = newStan;
+        stanPracownika = newStan;
         rok_urodzenia = newRok;
         wynagrodzenie = newWynagrodzenie;
     }
@@ -49,7 +34,7 @@ public class Employee implements Comparable<Employee>, Comparator<Employee>{
     {
         System.out.println("Imie: " + imie);
         System.out.println("Nazwisko: " + nazwisko);
-        System.out.println("Stan pracownika: " + stan_pracownika);
+        System.out.println("Stan pracownika: " + stanPracownika);
         System.out.println("Rok urodzenia: " + rok_urodzenia);
         System.out.println("Wynagrodzenie: " + wynagrodzenie);
     }
@@ -62,10 +47,10 @@ public class Employee implements Comparable<Employee>, Comparator<Employee>{
     {
         return this.nazwisko.compareTo(nazwisko.nazwisko);
     }
-
     @Override
-    public int compare(Employee e1, Employee e2) {
+    public int compare(Employee e1, Employee e2)
+    {
         return e1.getNazwisko().compareTo(e2.getNazwisko());
     }
-
+    public static Comparator<Employee> salaryComparator = Comparator.comparingDouble(Employee::getWynagrodzenie);
 }
