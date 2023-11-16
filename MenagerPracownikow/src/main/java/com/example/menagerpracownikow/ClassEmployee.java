@@ -94,4 +94,9 @@ public class ClassEmployee{
     {
         return Collections.max(pracownicy, Employee.salaryComparator);
     }
+
+    public double przepelnienie ()
+    {
+        return (pracownicy.size() / (double)max_employee)*100;
+    }
 }

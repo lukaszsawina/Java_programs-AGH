@@ -6,6 +6,8 @@ import java.util.Map;
 public class ClassContainer {
     private Map<String, ClassEmployee> kontenery = new HashMap();
 
+    public Map<String, ClassEmployee> getKontenery() {return kontenery; }
+
     public void addClass(String nazwa, double ilosc) {
         if (!kontenery.containsKey(nazwa)) {
             kontenery.put(nazwa, new ClassEmployee());
